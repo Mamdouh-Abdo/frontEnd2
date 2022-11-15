@@ -1,4 +1,133 @@
-span{
-    background-color: red;
-   margin: 50px;
+/* Start var  */
+:root{
+    --main-col: #4d2305;
+--scondry-col:rgb(217, 134, 0);
+
+}
+/* End var  */
+/* GLOBAL RULES START */
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgba(147, 114, 88, 0.749);
+    font-family: 'Open Sans', sans-serif;
+
+    height: 600vh;
+}
+
+.container {
+    background-image: url(/images/bg.jpg);
+
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+/* GLOBAL RULES END */
+
+/* header start */
+header nav li a {
+    display: block;
+    color: var(--main-col);
+    transition: .3s ease-out;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 40px 10px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 4px rgb(255, 255, 255) solid;
+    padding: 0 20px;
+   
+}
+
+header .container::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: calc(100% - 40px);
+    background-color: var(--main-col);
+    left: 20px;
+    bottom: 0;
+    z-index: -1;
+}
+
+header .container nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+header .container ul {
+    display: flex;
+    flex-direction: row;
+
+}
+header nav li a.active,
+header nav li a:hover{
+  color: var(--scondry-col);
+  border-bottom: var(--scondry-col) 2px solid;
+
+} 
+
+
+/* header End */
+
+
+
+/* media very small  *********************************/
+@media (min-width:375px) {
+    .container {
+        width: 360px;
+
+    }
+}
+
+/* media small  min 768 ******************************************/
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+
+}
+
+/* media medium  min 992 ******************************************/
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* media larege  min 1200 ******************************************/
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
 }
