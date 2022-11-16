@@ -100,7 +100,7 @@ header nav li:hover a::after {
     left: 0;
     box-shadow: inset 0px -2px 3px var(--main-col);
     animation: bord .3s cubic-bezier(0.82, -0.01, 0.78, 1.69)forwards;
-    z-index: 1;
+
 
 }
 
@@ -189,7 +189,7 @@ header .container::after {
     background-color: var(--main-col);
     left: 20px;
     bottom: 0;
-    z-index: -1;
+    z-index: 2;
 }
 
 header .container nav {
@@ -285,13 +285,12 @@ margin-top: 5px;
        margin-top:0px;
     }
 }
-
 @media (min-width:1920px) {
     .container {
         width: 80%;
         --a-font: 25px;
     }
     nav ul{
-        margin-top: 5;
+        margin-bottom: 1px;
      }
 }
