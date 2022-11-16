@@ -48,7 +48,7 @@ a {
 
 header nav li {
     padding: 0 10px;
-    margin: 5px 2px 2px;
+    margin: 5px 2px 0px;
     border: #4d230500 1px solid;
 }
 
@@ -259,6 +259,9 @@ header nav .form .icon-search {
     nav ul li a {
         font-size: var(--a-font);
     }
+    nav ul{
+        margin-top: 7px;
+     }
 }
 
 /* media medium  min 992 ******************************************/
@@ -266,6 +269,9 @@ header nav .form .icon-search {
     .container {
         width: 970px;
         --a-font: 18px;
+    }
+    nav ul{
+margin-top: 5px;
     }
 }
 
@@ -275,11 +281,17 @@ header nav .form .icon-search {
         width: 80%;
         --a-font: 22px;
     }
+    nav ul{
+       margin-top:0px;
+    }
 }
 
 @media (min-width:1920px) {
     .container {
         width: 80%;
-        --a-font: 30px;
+        --a-font: 25px;
     }
+    nav ul{
+        margin-top: 5;
+     }
 }
