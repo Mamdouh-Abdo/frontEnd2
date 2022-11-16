@@ -1,9 +1,10 @@
 /* Start var  */
-:root{
+:root {
     --main-col: #4d2305;
---scondry-col:rgb(217, 134, 0);
-
+    --scondry-col: rgb(217, 134, 0);
+    --a-font: 18px;
 }
+
 /* End var  */
 /* GLOBAL RULES START */
 * {
@@ -42,9 +43,18 @@ ul {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* GLOBAL RULES END */
 
 /* header start */
+header nav li {
+    padding: 0 10px;
+    border: #4d230500 1px solid;
+}
+
 header nav li a {
     display: block;
     color: var(--main-col);
@@ -52,8 +62,68 @@ header nav li a {
     text-decoration: none;
     font-size: 20px;
     font-weight: 600;
-    padding: 40px 10px;
+    position: relative;
+    padding: 40px 0px;
+    perspective-origin: right;
+
 }
+
+header nav ul li:nth-child(1) {
+    background: rgba(255, 255, 255, 0.679);
+    border: #4d2305 1px solid;
+    border-radius: 5px;
+}
+header nav ul li:nth-child(1) ::after {
+    content: "";
+    width: 0%;
+    height: 7px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: var(--scondry-col);
+    bottom: 0px;
+    left: 0;
+    animation: bord .3s cubic-bezier(0.82, -0.01, 0.78, 1.69)forwards;
+    
+
+}
+header nav li:hover a::after {
+    content: "";
+    width: 0%;
+    height: 7px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: var(--scondry-col);
+    bottom: 0px;
+    left: 0;
+    animation: bord .3s cubic-bezier(0.82, -0.01, 0.78, 1.69)forwards;
+    z-index: 1;
+
+}
+
+
+@keyframes bord {
+    100% {
+        width: 100%;
+    }
+
+}
+
+
+header nav li:hover {
+    color:var(--scondry-col);
+    background: rgba(255, 255, 255, 0.679);
+    border-radius: 6px;
+    border: #4d2305 1px solid;
+}
+.active a,
+header nav li a:hover {
+    color:var(--scondry-col);
+    
+    border-radius: 6px;
+    
+}
+
+
 
 header .container {
     display: flex;
@@ -62,7 +132,6 @@ header .container {
     position: relative;
     border-bottom: 4px rgb(255, 255, 255) solid;
     padding: 0 20px;
-   
 }
 
 header .container::after {
@@ -88,15 +157,39 @@ header .container nav {
 header .container ul {
     display: flex;
     flex-direction: row;
+}
+
+.togle-icon {
+    padding: 40px 10px;
+}
+
+@media (min-width:768px) {
+
+    .togle-icon {
+        display: none;
+    }
+}
+
+@media (max-width:767px) {
+    header .container ul {
+        display: none;
+    }
 
 }
-header nav li a.active,
-header nav li a:hover{
-  color: var(--scondry-col);
-  border-bottom: var(--scondry-col) 2px solid;
 
-} 
+header nav .form {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-left: 2px solid var(--main-col);
+}
 
+header nav .form .icon-search {
+    color: var(--main-col);
+}
 
 /* header End */
 
@@ -105,8 +198,8 @@ header nav li a:hover{
 /* media very small  *********************************/
 @media (min-width:375px) {
     .container {
-        width: 360px;
-
+        min-width: 320px;
+        max-width: 95%;
     }
 }
 
@@ -116,6 +209,9 @@ header nav li a:hover{
         width: 750px;
     }
 
+    nav ul li a {
+        font-size: var(--a-font);
+    }
 }
 
 /* media medium  min 992 ******************************************/
@@ -128,6 +224,6 @@ header nav li a:hover{
 /* media larege  min 1200 ******************************************/
 @media (min-width:1200px) {
     .container {
-        width: 1170px;
+        width: 80%;
     }
 }
