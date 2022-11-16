@@ -2,7 +2,7 @@
 :root {
     --main-col: #4d2305;
     --scondry-col: rgb(217, 134, 0);
-    --a-font: 18px;
+    --a-font: 15px;
 }
 
 /* End var  */
@@ -48,6 +48,7 @@ a {
 
 header nav li {
     padding: 0 10px;
+    margin: 5px 2px 2px;
     border: #4d230500 1px solid;
 }
 
@@ -67,7 +68,11 @@ header nav li a {
 header nav ul li:nth-child(1) {
     background: rgba(255, 255, 255, 0.679);
     border: #4d2305 1px solid;
-    border-radius: 5px;
+    border-bottom-color: transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 header nav ul li:nth-child(1) ::after {
@@ -91,8 +96,9 @@ header nav li:hover a::after {
     border-radius: 10px;
     position: absolute;
     background-color: var(--scondry-col);
-    bottom: 0px;
+    bottom: -1px;
     left: 0;
+    box-shadow: inset 0px -2px 3px var(--main-col);
     animation: bord .3s cubic-bezier(0.82, -0.01, 0.78, 1.69)forwards;
     z-index: 1;
 
@@ -109,16 +115,54 @@ header nav li:hover a::after {
 
 header nav li:hover {
     color: var(--scondry-col);
-    background: rgba(255, 255, 255, 0.679);
+    background: rgba(255, 255, 255, 0.59);
     border-radius: 6px;
     border: #4d2305 1px solid;
+    border-bottom-color: transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+header nav li a::before {
+    content: "";
+    width: 30px;
+    border: solid 4px transparent;
+    border-top-color: var(--scondry-col);
+    border-right-color: var(--scondry-col);
+    right: -30px;
+    transform: rotate(45deg);
+    top: 7px;
+    position: absolute;
+    border-radius: 50%;
+    height: 30px;
+    display: none;
+}
+
+header nav li:last-child a::before,
+header nav li:first-child a::before {
+    content: "";
+    width: 30px;
+    border: solid 4px transparent;
+    border-top-color: var(--scondry-col);
+    border-right-color: var(--scondry-col);
+    left: -30px;
+    transform: rotate(-135deg);
+    height: 30px;
+}
+
+header nav li:first-child a::before {
+    display: block;
+}
+
+header nav li:hover a::before {
+    display: block;
 }
 
 .active a,
 header nav li a:hover {
     color: var(--scondry-col);
-
-    border-radius: 6px;
 
 }
 
@@ -221,6 +265,7 @@ header nav .form .icon-search {
 @media (min-width:992px) {
     .container {
         width: 970px;
+        --a-font: 18px;
     }
 }
 
@@ -228,5 +273,13 @@ header nav .form .icon-search {
 @media (min-width:1200px) {
     .container {
         width: 80%;
+        --a-font: 22px;
+    }
+}
+
+@media (min-width:1920px) {
+    .container {
+        width: 80%;
+        --a-font: 30px;
     }
 }
