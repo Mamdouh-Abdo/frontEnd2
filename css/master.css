@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-    background-image: url(/images/bg.jpg);
+    background-image: url(../images/bg.jpg);
     background-repeat: repeat;
     background-position: center;
     mix-blend-mode: overlay;
