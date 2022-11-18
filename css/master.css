@@ -264,14 +264,14 @@ header nav .form .icon-search {
 /* media very small  *********************************/
 @media (max-width:375px) {
 .container{
-    --logo-size:60px;
+    --logo-size:80px;
 }
 }
 @media (min-width:375px) {
     .container {
         min-width: 320px;
         max-width: 95%;
-        --logo-size:70px;
+        --logo-size:85px;
     }
  
     
