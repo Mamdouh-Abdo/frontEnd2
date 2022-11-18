@@ -1,8 +1,9 @@
 /* Start var  */
 :root {
     --main-col: #4d2305;
-    --scondry-col: rgb(217, 134, 0);
+    --scondry-col: #d98600;
     --a-font: 15px;
+    --logo-size:100px;
 }
 
 /* End var  */
@@ -47,6 +48,9 @@ a {
 /* GLOBAL RULES END */
 
 /* header start */
+ header .container .logo img{
+    width:var(--logo-size);
+}
 
 header nav li {
     padding: 0 10px;
@@ -258,17 +262,27 @@ header nav .form .icon-search {
 
 
 /* media very small  *********************************/
+@media (max-width:375px) {
+.container{
+    --logo-size:60px;
+}
+}
 @media (min-width:375px) {
     .container {
         min-width: 320px;
         max-width: 95%;
+        --logo-size:70px;
     }
+ 
+    
 }
 
 /* media small  min 768 ******************************************/
 @media (min-width:768px) {
     .container {
         width: 750px;
+        --logo-size:110px;
+       
     }
 
     nav ul li a {
