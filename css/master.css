@@ -48,6 +48,17 @@ a {
 /* GLOBAL RULES END */
 
 /* header start */
+header .container ul  hr {
+  background: var(--main-col);
+    width:80%;
+    height: 2px;
+    margin-top: 0px;
+}
+header .container ul  hr:last-child{
+margin-bottom: 20px;
+}
+
+
 header .container .logo img {
     width: var(--logo-size);
 }
@@ -226,19 +237,26 @@ header .container ul {
 @media (max-width:767px) {
     header .container ul {
         display: none;
+        background: rgba(255, 245, 226, 0.321);
+
+        margin-top: 8px;
+        padding: 5px;
+        border-radius: 5px;
     }
+
 
     nav .togle-icon:hover+ul {
         display: flex;
         flex-flow: column;
         position: absolute;
         align-items: center;
+        justify-content: center;
         top: 100%;
-        right: 30px;
+        width: 94%;
     }
 
     nav ul li a {
-        padding: 10px;
+        padding: 15px;
     }
 
     header nav li a::before,
@@ -248,15 +266,14 @@ header .container ul {
         border: solid 4px transparent;
         border-top-color: var(--scondry-col);
         border-right-color: var(--scondry-col);
-        left: -22px;
-        transform: rotate(-148deg);
+        right: -25px;
+        transform: rotate(-313deg);
         height: 20px;
         display: block;
     }
 
     header nav li a::after {
         content: "";
-        width: 0%;
         height: 7px;
         border-radius: 10px;
         position: absolute;
@@ -299,10 +316,46 @@ header nav .form .icon-search {
 
 
 
+/* media tiny small  *********************************/
+
+@media (min-width:320px) {
+    header .container {
+        max-width: 95%;
+    }
+
+    header .container nav ul {
+        margin-right: -10px;
+       
+    }
+    header .container nav ul li {
+        margin-bottom: -1px;
+       
+    }
+    header .container nav ul hr {
+        margin-bottom: 10px;
+       
+    }
+    header .container nav ul li:first-child{
+margin-top: 20px;
+    }
+}
+
+
 /* media very small  *********************************/
+
 @media (max-width:375px) {
     .container {
         --logo-size: 80px;
+    }
+
+    header nav li {
+        margin-top: 10px;
+        margin: 0px;
+    }
+
+    header .container nav ul {
+        padding: 0;
+        max-width: 33%;
     }
 }
 
@@ -313,7 +366,26 @@ header nav .form .icon-search {
         --logo-size: 85px;
     }
 
+    header nav li {
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    header .container nav ul hr {
+        margin-bottom: 0px;
+       
+    }
 
+    header .container nav ul {
+        padding: 0;
+        max-width: 89%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width:767px) {
+    header .container nav ul {
+        max-width: 95%;
+    }
 }
 
 /* media small  min 768 ******************************************/
@@ -328,9 +400,7 @@ header nav .form .icon-search {
         font-size: var(--a-font);
     }
 
-    nav ul {
-        margin-top: 7px;
-    }
+
 }
 
 /* media medium  min 992 ******************************************/
