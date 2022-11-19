@@ -3,7 +3,7 @@
     --main-col: #4d2305;
     --scondry-col: #d98600;
     --a-font: 15px;
-    --logo-size:100px;
+    --logo-size: 100px;
 }
 
 /* End var  */
@@ -48,8 +48,8 @@ a {
 /* GLOBAL RULES END */
 
 /* header start */
- header .container .logo img{
-    width:var(--logo-size);
+header .container .logo img {
+    width: var(--logo-size);
 }
 
 header nav li {
@@ -106,8 +106,6 @@ header nav li:hover a::after {
     left: 0;
     box-shadow: inset 0px -2px 3px var(--main-col);
     animation: bord .3s cubic-bezier(0.82, -0.01, 0.78, 1.69)forwards;
-
-
 }
 
 @keyframes bord {
@@ -145,16 +143,19 @@ header nav li a::before {
     display: none;
 }
 
-header nav li:last-child a::before,
-header nav li:first-child a::before {
-    content: "";
-    width: 30px;
-    border: solid 4px transparent;
-    border-top-color: var(--scondry-col);
-    border-right-color: var(--scondry-col);
-    left: -30px;
-    transform: rotate(-135deg);
-    height: 30px;
+@media (min-width:768px) {
+
+    header nav li:last-child a::before,
+    header nav li:first-child a::before {
+        content: "";
+        width: 30px;
+        border: solid 4px transparent;
+        border-top-color: var(--scondry-col);
+        border-right-color: var(--scondry-col);
+        left: -30px;
+        transform: rotate(-135deg);
+        height: 30px;
+    }
 }
 
 header nav li:first-child a::before {
@@ -234,11 +235,48 @@ header .container ul {
         align-items: center;
         top: 100%;
         right: 30px;
-       
     }
 
     nav ul li a {
-        padding: 20px;
+        padding: 10px;
+    }
+
+    header nav li a::before,
+    header nav li a::before {
+        content: "";
+        width: 20px;
+        border: solid 4px transparent;
+        border-top-color: var(--scondry-col);
+        border-right-color: var(--scondry-col);
+        left: -22px;
+        transform: rotate(-148deg);
+        height: 20px;
+        display: block;
+    }
+
+    header nav li a::after {
+        content: "";
+        width: 0%;
+        height: 7px;
+        border-radius: 10px;
+        position: absolute;
+        background-color: var(--scondry-col);
+        bottom: -1px;
+        left: 0;
+        box-shadow: inset 0px -2px 3px var(--main-col);
+        animation: bord .3s cubic-bezier(0.82, -0.01, 0.78, 1.69)forwards;
+    }
+
+    header nav li {
+        color: var(--scondry-col);
+        background: rgba(255, 255, 255, 0.59);
+        border-radius: 6px;
+        border: #4d2305 1px solid;
+        border-bottom-color: transparent;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
     }
 }
 
@@ -263,26 +301,27 @@ header nav .form .icon-search {
 
 /* media very small  *********************************/
 @media (max-width:375px) {
-.container{
-    --logo-size:80px;
+    .container {
+        --logo-size: 80px;
+    }
 }
-}
+
 @media (min-width:375px) {
     .container {
         min-width: 320px;
         max-width: 95%;
-        --logo-size:85px;
+        --logo-size: 85px;
     }
- 
-    
+
+
 }
 
 /* media small  min 768 ******************************************/
 @media (min-width:768px) {
     .container {
         width: 750px;
-        --logo-size:110px;
-       
+        --logo-size: 110px;
+
     }
 
     nav ul li a {
