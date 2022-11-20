@@ -2,7 +2,8 @@
 :root {
     --main-col: #4d2305;
     --scondry-col: #d98600;
-    --hov-col:#ffecc263;
+    --hov-col: rgba(251, 220, 176, 0.52);
+
     --a-font: 15px;
     --logo-size: 100px;
 }
@@ -24,7 +25,7 @@ html {
 
 
 body {
-    background-color: rgba(147, 114, 88, 0.749);
+    /* background-color: rgba(80, 41, 12, 0.749); */
     font-family: 'Open Sans', sans-serif;
 
     height: 600vh;
@@ -51,7 +52,7 @@ a {
 header {
     position: sticky;
     top: 0px;
-    }
+}
 
 
 header .container ul hr {
@@ -136,7 +137,7 @@ header nav li:hover a::after {
 
 header nav li:hover {
     color: var(--scondry-col);
-    background:var(--hov-col);
+    background: var(--hov-col);
     border-radius: 6px;
     border: #4d2305 1px solid;
     border-bottom-color: transparent;
@@ -256,11 +257,7 @@ header .container ul {
 @media (max-width:767px) {
     header .container ul {
         display: none;
-        background-color:rgba(255, 228, 228, 0.753) 
-        ;
-     
-
-        margin-top: 6px;
+        margin-top: 10px;
         padding: 5px;
         border-radius: 5px;
     }
@@ -340,7 +337,7 @@ header nav .form .icon-search {
 article div {
     width: 100%;
     height: 500px;
-    background-color: rgb(255, 0, 0);
+
 
 }
 
@@ -420,6 +417,9 @@ article div {
 @media (max-width:767px) {
     header .container nav ul {
         max-width: 95%;
+        background: center url(../images/bg.jpg) fixed;
+
+        box-shadow: 0px 4px 7px rgba(62, 27, 1, 0.262);
     }
 }
 
